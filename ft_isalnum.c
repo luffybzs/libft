@@ -12,8 +12,8 @@
 
 int	ft_isalnum(int alnum)
 {
-	if (alnum >= 65 && alnum <= 90
-		|| (alnum >= 97 && alnum <= 122) || (alnum >= 48 && alnum <= 57))
+	if (alnum >= 65 && alnum <= 90 || (alnum >= 97 && alnum <= 122)
+		|| (alnum >= 48 && alnum <= 57))
 	{
 		return (1);
 	}

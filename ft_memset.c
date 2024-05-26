@@ -6,36 +6,31 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:01:35 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 17:59:54 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/23 14:03:26 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
-void	*ft_memset(void *ptr, int value, size_t c)
+void	*ft_memset(void *str, int value, size_t len)
 {
-	size_t	i;
-	unsigned char	*str;
-	unsigned char	val;
-
-	i = 0;
-	str = (unsigned char *)ptr;
-	val = (unsigned char)value;
+	char	*start;
 	
-	while (i < c)
+	start = str;
+	while (len)
 	{
-		str[i] = (unsigned char)val;
-		i++;
+		*start = value;
+		len--;
+		start++;
 	}
 	return (str);
 }
 /*
-int main() {
-    char str[20];
-    size_t len = 15;
-    int value = 'b';
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+int	main(void) {
+    char str[] = "bbbbbbbbbbbbbbbbbbbbbbbb";
+    size_t len = 10;
+    int value = 'a';
 
     // Utilisation de la fonction standard memset
     memset(str, value, len);
@@ -45,6 +40,6 @@ int main() {
     ft_memset(str, value, len);
     printf("ft_memset: %s\n", str);
 
-    return 0;
+    return (0);
 }
 */

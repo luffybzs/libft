@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:28:17 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 12:49:48 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/21 11:39:58 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	{
 		i++;
 		n--;
-	}
-	if (n == 0)
-	{
-		return (0);
 	}
 	return (s1[i] - s2[i]);
 }

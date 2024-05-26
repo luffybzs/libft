@@ -6,16 +6,18 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:35:43 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 12:49:09 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/22 09:54:37 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '/0')
+	while (str[i])
 	{
 		i++;
 	}

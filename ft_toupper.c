@@ -6,15 +6,15 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:28:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 17:16:57 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/21 11:40:52 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int up)
 {
-	unsigned char a;
+	unsigned char	a;
 
-	a = (unsigned char *)up;
+	a = (unsigned char)up;
 	if (a >= 'a' && a <= 'z')
 	{
 		a -= 32;
