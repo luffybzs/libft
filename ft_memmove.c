@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 16:25:13 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 17:24:05 by ayarab           ###   ########.fr       */
+/*   Created: 2024/05/20 13:45:43 by ayarab            #+#    #+#             */
+/*   Updated: 2024/05/26 20:03:26 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	len;
-	size_t	i;
-
+	char	*s;
+	char	*d;
+	size_t	*i;
+	
+	if (!src || !dst)
+		return (NULL);
+	s = (char *)src;
+	d = (char * )dst;
 	i = 0;
-	len = ft_strlen(src);
-	if (size < 1)
+	if (d > s)
 	{
-		return (len);
+		while (len-- > 0)
+			d[len] = s[len];
 	}
-	if (size != 0)
+	else
 	{
-		while (src[i] && i < size - 1)
+		while (i < len)
 		{
-			dest[i] = src[i];
+			d[i] = s[len];
 			i++;
 		}
 	}
-	dest[i] = '\0';
-	return (len);
+	return (dst);
 }

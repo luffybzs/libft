@@ -6,11 +6,11 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:01:23 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 11:47:48 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/27 15:46:56 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
@@ -24,7 +24,7 @@ char *ft_substr(char const *str, unsigned int start, size_t len)
 	strlen = ft_strlen(str);
 	if (start >= strlen)
 	{
-		return (strdup(""));
+		return (ft_strdup(""));
 	}
 	substr = malloc(sizeof(char) * (len + 1));
 	while (i < len && str[start + i])
@@ -40,6 +40,7 @@ char *ft_substr(char const *str, unsigned int start, size_t len)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int	main(void)
 {
 	char *result;

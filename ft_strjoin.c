@@ -6,10 +6,9 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:23:47 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/23 13:41:09 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/27 14:41:42 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -45,12 +44,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 int	main(void)
 {
-	const char	*str1 = "ayoub le chef";
-	const char	*str2 = "   ,ouii...845454-";
+	const char	*str1;
+	const char	*str2;
 	char		*result;
 
+	str1 = "ayoub le chef";
+	str2 = "   ,ouii...845454-";
 	result = ft_strjoin(str1, str2);
 	if (result == NULL)
 	{

@@ -1,55 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 10:03:20 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/21 10:41:17 by ayarab           ###   ########.fr       */
+/*   Created: 2024/05/26 16:58:14 by ayarab            #+#    #+#             */
+/*   Updated: 2024/05/28 15:00:02 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <unistd.h>
-
-int	ft_strlen(char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+	write(fd, &c, 1);
 }
-
-char	*ft_strstr(char *str, char *to_find)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
-	unsigned int	verif;
-	int				bool;
-
-	verif = 0;
-	bool = 0;
-	i = 0;
-	j = 0;
-	len = ft_strlen(to_find);
-	while (str[i])
+	long nbr;
+	
+	nbr = n;
+	if (nbr < 0)
 	{
-		if (str[i])
+		nbr = -nbr;
+		ft_putchar_fd('-', fd);
 	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
+	}
+	else
+		ft_putchar_fd(nbr + 48, fd);
 }
-
-int	main(void)
+/*
+int main()
 {
-	char str[] = "ayoub arab 42";
-	char search[] = "arab";
-
-	*ft_strstr(str, search);
-
+	ft_putnbr_fd(-2147483648, 2);
+	ft_putnbr_fd(-25, 2);
 	return (0);
-}
+}*/

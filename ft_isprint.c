@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:47:01 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 10:47:08 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/28 11:47:48 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int print)
+int	ft_isprint(int c)
 {
-	if (print >= 32 && print <= 127)
+	if (c >= 32 && c <= 127)
 	{
 		return (1);
 	}

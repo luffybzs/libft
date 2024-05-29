@@ -6,11 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:50:09 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/23 13:37:03 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/28 11:36:04 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -56,22 +58,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	*dst = '\0';
 	return (i + j);
 }
-/*
-#include <stdio.h>
-#include <string.h>
+
 
 int main(void) {
-    char destination[] = "ayoub";
-    const char source[] = "idrissa";
+    char destination[] = "hello";
+    const char source[] = "c     world";
     
     printf("Avant ft_strlcat:\n");
     printf("destination: '%s'\n", destination);
     printf("source: '%s'\n", source);
-    size_t result = ft_strlcat(destination, source, 50);
+    size_t result = ft_strlcat(destination, source, 5);
     printf("\nAprès ft_strlcat:\n");
     printf("destination: '%s'\n", destination);
     printf("Longueur totale prévue: %zu\n", result);
     
     return 0;
 }
-*/

@@ -6,14 +6,14 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:19:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 12:32:26 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/28 11:52:49 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int alnum)
+int	ft_isalnum(int c)
 {
-	if (alnum >= 65 && alnum <= 90 || (alnum >= 97 && alnum <= 122)
-		|| (alnum >= 48 && alnum <= 57))
+	if (c >= 65 && c <= 90 || (c >= 97 && c <= 122)
+		|| (c >= 48 && c <= 57))
 	{
 		return (1);
 	}

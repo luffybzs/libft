@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 11:34:07 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 12:28:05 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/28 11:21:44 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char *ft_strmapi(char const *str, char (*f)(unsigned int, char))
 	
 	return (reslut);
 }
+
 /*
 #include <stdlib.h>
 #include <stddef.h>
