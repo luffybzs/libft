@@ -6,20 +6,24 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 19:05:48 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/21 11:37:42 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:11 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *str, int chr)
+#include "libft.h"
+
+char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
+	size_t	len;
 
+	len = ft_strlen(str);
 	i = 0;
-	while (str[i])
+	while (i < len + 1)
 	{
-		if (str[i] == (unsigned char)chr)
+		if (str[i] == (char)c)
 		{
-			return (str + i);
+			return ((char *)&str[i]);
 		}
 		i++;
 	}

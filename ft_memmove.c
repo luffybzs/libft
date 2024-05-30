@@ -6,20 +6,22 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:45:43 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 20:03:26 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:07:01 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*s;
 	char	*d;
-	size_t	*i;
-	
+	size_t	i;
+
 	if (!src || !dst)
 		return (NULL);
 	s = (char *)src;
-	d = (char * )dst;
+	d = (char *)dst;
 	i = 0;
 	if (d > s)
 	{
@@ -30,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			d[i] = s[len];
+			d[i] = s[i];
 			i++;
 		}
 	}

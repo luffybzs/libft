@@ -6,19 +6,21 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:58:14 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/28 15:00:02 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:39 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nbr;
-	
+	long	nbr;
+
 	nbr = n;
 	if (nbr < 0)
 	{
@@ -33,10 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(nbr + 48, fd);
 }
-/*
-int main()
-{
-	ft_putnbr_fd(-2147483648, 2);
-	ft_putnbr_fd(-25, 2);
-	return (0);
-}*/

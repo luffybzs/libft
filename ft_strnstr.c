@@ -6,13 +6,12 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:03:20 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/28 11:46:15 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:05:02 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
+
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
@@ -20,7 +19,6 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-
 	if (to_find[0] == '\0')
 		return ((char *)str);
 	while (str[i] && i < len)
@@ -35,17 +33,4 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		j = 0;
 	}
 	return (0);
-} 
-int main()
-{
-	const char *str;
-	const char 	*to_find;
-	str = "ayoub aran ducene";
-	to_find = "arab";
-	printf("reslut , %s", ft_strnstr(str, to_find, 51));
-	return (0);
-	
-	
-	
-	
 }

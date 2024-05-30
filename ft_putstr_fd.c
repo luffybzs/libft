@@ -6,15 +6,16 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:43:44 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 17:15:02 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:24 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
-	
+
 	if (!s)
 		return ;
 	i = 0;

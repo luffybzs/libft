@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:02:51 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 11:36:30 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:04 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	size_t	i;
 	char	*res;
@@ -40,6 +40,6 @@ char	*ft_strdup(char *src)
 		res[i] = src[i];
 		i++;
 	}
-	res[i] == '\0';
+	res[i] = '\0';
 	return (res);
 }

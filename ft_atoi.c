@@ -6,9 +6,11 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:37:02 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/20 11:35:17 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:08:17 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

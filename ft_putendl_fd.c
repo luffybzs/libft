@@ -6,11 +6,12 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:49:12 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/28 11:49:30 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:32 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+
 void	ft_putendl_fd(char *str, int fd)
 {
 	ft_putstr_fd(str, fd);

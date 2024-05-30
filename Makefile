@@ -1,33 +1,61 @@
-NAME		= libft.a
-CFLAGS		= -Wall -Werror -Wextra -I. -c
-FILES		= ft_bzero.c
-OBJ			= $(FILES:%.c=%.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/30 14:37:13 by ayarab            #+#    #+#              #
+#    Updated: 2024/05/30 15:48:33 by ayarab           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all: $(NAME)
+LIBC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+		ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c \
+		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c \
+		ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
+		ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c 
 
-copy:
-	cp -f libc-funcs/*.c .
-	cp -f additional-funcs/*.c .
-	cp -f bonus-funcs/*.c .
-	cp -f personal-funcs/*.c .
+ADDITIONAL =	ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
+				ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c ft_striteri.c
 
-# This won't run if the .o files don't exist or are not modified
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstmap_bonus.c\
+		 ft_lstlast_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
+		 ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstdelone_bonus.c\
 
-# This won't run if the source files don't exist or are not modified
-$(OBJ): $(FILES)
-	gcc $(CFLAGS) $(FILES)
+SRCS = ${LIBC} ${ADDITIONAL}
 
-clean:
-	rm -f $(OBJ)
-	rm -f $(FILES) # comment this line if you don't want it to remove the source files from the root
+SRCSALL = ${LIBC} ${ADDITIONAL}
 
-fclean: clean
-	rm -f $(NAME)
+OBJS = ${SRCS:.c=.o}
 
-re: fclean all
+OBJSALL = ${SRCSALL:.c=.o} 
 
-# I use .PHONY to make sure that gnu make will still run even if files called
-# clean / fclean / all and re already exist in the directory
-.PHONY: clean fclean all re
+LIB = libft.a
+
+CC = cc
+
+CFLAGS = -Wall -Werror -Wextra -I ./
+
+.c.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+${LIB}:	${OBJS}
+		ar -rsc ${LIB} ${OBJS}
+
+
+all: 	${LIB}
+
+clean:	
+		rm -f ${OBJSALL}
+
+fclean:	clean;
+		rm -f ${LIB}
+
+re:	fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCSALL)
+	gcc -nostartfiles -shared -o libft.so $(OBJSALL)
+
+.PHONY: all clean fclean re bonus

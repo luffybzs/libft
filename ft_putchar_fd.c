@@ -6,11 +6,12 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:34:38 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 16:42:23 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:06:48 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

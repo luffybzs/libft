@@ -6,15 +6,17 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:28:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/28 16:58:42 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:04:37 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int up)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	unsigned char	a;
 
-	a = (unsigned char)up;
+	a = (unsigned char)c;
 	if (a >= 'a' && a <= 'z')
 	{
 		a -= 32;

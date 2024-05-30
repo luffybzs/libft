@@ -6,13 +6,12 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 13:14:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/27 18:11:23 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:04:28 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
+
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -68,15 +67,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	res[i] = '\0';
 	return (res);
-}
-
-int	main(void)
-{
-	char	*str;
-	char	*set;
-
-    str = "wccccccccayoubwwwccccwcwcwc";
-    set = "wc";
-    printf("reslut : %s", ft_strtrim(str, set));
-    return (0);
 }

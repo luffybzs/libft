@@ -6,71 +6,29 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:50:09 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/28 11:36:04 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 16:59:29 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	lendest;
-	size_t	lensrc;
 	size_t	i;
 	size_t	j;
 
-	lendest = ft_strlen(dst);
-	lensrc = ft_strlen(src);
 	i = 0;
 	j = 0;
-	
-	while (i < size && *dst)
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size < ft_strlen(dst))
+		return (ft_strlen(src) + size);
+	i = ft_strlen(dst);
+	while (src[j] && i + j + 1 < size)
 	{
-		i++;
-		dst++;
-	}
-	if (i >= size - 1)
-	{
-		return (i + lensrc);
-	}
-	while (src[j])
-	{
-		if (j + i < size - 1)
-		{
-			*dst++ = src[j];
-		}
+		dst[i + j] = src[j];
 		j++;
 	}
-	*dst = '\0';
-	return (i + j);
-}
-
-
-int main(void) {
-    char destination[] = "hello";
-    const char source[] = "c     world";
-    
-    printf("Avant ft_strlcat:\n");
-    printf("destination: '%s'\n", destination);
-    printf("source: '%s'\n", source);
-    size_t result = ft_strlcat(destination, source, 5);
-    printf("\nAprès ft_strlcat:\n");
-    printf("destination: '%s'\n", destination);
-    printf("Longueur totale prévue: %zu\n", result);
-    
-    return 0;
+	dst[i + j] = '\0';
+	return (ft_strlen(src) + i);
 }

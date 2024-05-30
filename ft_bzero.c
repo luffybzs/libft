@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:22:18 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/21 11:14:09 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:08:10 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 
@@ -22,7 +22,7 @@ void	*ft_bzero(void *s, size_t n)
 		*ptr = 0;
 		ptr++;
 	}
-	return (s);
+	return ;
 }
 
 /*

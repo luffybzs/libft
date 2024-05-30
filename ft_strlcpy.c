@@ -6,13 +6,13 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:25:13 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 17:24:05 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:05:30 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-size_t strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	len;
 	size_t	i;

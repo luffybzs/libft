@@ -6,21 +6,21 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 19:13:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/26 17:25:02 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/05/30 18:04:56 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *str, int chr)
+#include "libft.h"
+
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = ft_strlen(str);
-	while (str[i] >= 0)
+	while (i >= 0)
 	{
-		if (str[i] == (unsigned char)chr)
-		{
-			return (str + i);
-		}
+		if (str[i] == (char)c)
+			return ((char *)str + i);
 		i--;
 	}
 	return (NULL);
