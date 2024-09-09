@@ -6,23 +6,11 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 13:14:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/30 18:04:28 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/06/05 13:43:19 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 static int	ft_charset(char c, char const *set)
 {
@@ -61,9 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (start < end)
 	{
-		res[i] = s1[start];
-		i++;
-		start++;
+		res[i++] = s1[start++];
 	}
 	res[i] = '\0';
 	return (res);

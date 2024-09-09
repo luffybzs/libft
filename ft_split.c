@@ -6,11 +6,12 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:21:01 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/30 18:08:57 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/05 13:29:53 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_free(char **res)
 {
@@ -69,7 +70,7 @@ char	*ft_split2(char *str, char c, char **res, int i)
 		if (str[i] != c)
 		{
 			res[j] = malloc(sizeof(char) * (ft_lenword(str, c, i) + 1));
-			if (!res)
+			if (!res[j])
 				return (ft_free(res), NULL);
 			while (str[i] != c && str[i])
 				res[j][k++] = str[i++];
@@ -80,8 +81,8 @@ char	*ft_split2(char *str, char c, char **res, int i)
 		else
 			i++;
 	}
-	res[j] = 0;
-	return (str + j);
+	res[j] = NULL;
+	return (str);
 }
 
 char	**ft_split(char const *str, char c)
@@ -90,30 +91,37 @@ char	**ft_split(char const *str, char c)
 	char	**res;
 
 	i = 0;
-	if (str == NULL)
+	if (!str)
 		return (NULL);
-	res = (char **)malloc(sizeof(char *) * (ft_countlen(str, c) + 1));
+	if (!*str)
+	{
+		res = malloc(sizeof(char *) * 1);
+		if (!res)
+			return (NULL);
+		res[0] = NULL;
+		return (res);
+	}
+	res = malloc(sizeof(char *) * (ft_countlen(str, c) + 1));
 	if (!res)
 		return (NULL);
 	while (str[i] == c)
 		i++;
+	if (!ft_split2((char *)str, c, res, i))
+		return (NULL);
 	return (res);
 }
 /*
-	//char	*j;
-	//j = ft_split2((char *)str, c, res, i);
-int	main(void)
-{
-	char const *str;
-	char l;
-	char **res;
-	int i;
-
-	str = "auaua a uaa ua aua ua  a        ";
-	l = ' ';
-	res = ft_split(str, l);
-	i = 0;
-	while (res[i])
-		printf("%s\n", res[i++]);
+ int	main(void)
+ {
+    char **tab;
+    char *str = "hello!";
+    char  l = ' ';
+     int i;
+ 	tab = ft_split(str,l);
+    i = 0;
+		while (i < 2)
+			printf("%s\n", tab[i++]);
+		ft_free(tab);
 	return (0);
-}*/
+}
+*/

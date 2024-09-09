@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:28:53 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/30 18:04:37 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/06/03 12:03:28 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char	a;
-
-	a = (unsigned char)c;
-	if (a >= 'a' && a <= 'z')
-	{
-		a -= 32;
-	}
-	return (a);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

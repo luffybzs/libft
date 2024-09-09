@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:50:59 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/30 18:04:02 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/06/05 13:49:42 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t len)
 	i = 0;
 	if (len != 0)
 	{
-		if (count > 2147483647 / len)
+		if (len > __SIZE_MAX__ / count)
 			return (0);
 	}
 	total = (char *)malloc(count * len);

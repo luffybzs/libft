@@ -6,7 +6,7 @@
 /*   By: ayarab <ayarab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:02:51 by ayarab            #+#    #+#             */
-/*   Updated: 2024/05/30 18:06:04 by ayarab           ###   ########.fr       */
+/*   Updated: 2024/09/05 13:14:50 by ayarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strdup(const char *src)
 	char	*res;
 
 	i = 0;
+	if (src == NULL)
+		return (NULL);
 	res = malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (res == NULL)
 	{
